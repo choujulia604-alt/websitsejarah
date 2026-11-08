@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kelompok DUA AKHDANNELOJULI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --black: #101110;
+    --dark: #191b19;
+    --white: #e9e8df;
+    --gray: #a2a49b;
+    --yellow: #d7f04a;
+    --line: rgba(255,255,255,.18);
+    --display: 'Barlow Condensed', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'DM Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--body);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+::selection {
+    background: var(--yellow);
+    color: var(--black);
+}
+
+/* SCROLL PROGRESS */
+
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--yellow);
+    z-index: 999;
+}
+
+/* NAVIGATION */
+
+header {
+    height: 75px;
+    background: var(--black);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font: 900 27px var(--display);
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--yellow);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    font: 10px var(--mono);
+    color: #c7c9c0;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--yellow);
+}
+
+.menu {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    background: var(--black);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.2)),
+        url("https://statik.tempo.co/data/2025/03/07/id_1382778/1382778_720.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    animation: zoom 15s ease-out forwards;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 9%;
+    width: 100%;
+}
+
+.eyebrow {
+    color: var(--yellow);
+    font: 11px var(--mono);
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font: 900 clamp(85px, 15vw, 210px)/.78 var(--display);
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    display: block;
+    overflow: hidden;
+    animation: titleUp 1s ease both;
+}
+
+.hero h1 .yellow {
+    color: var(--yellow);
+    animation-delay: .2s;
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 70px;
+    gap: 30px;
+}
+
+.hero-description {
+    max-width: 420px;
+    color: #d0d0c8;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.hero-date {
+    color: var(--yellow);
+    font: 11px/1.8 var(--mono);
+    text-align: right;
+}
+
+.stamp {
+    position: absolute;
+    right: 10%;
+    top: 15%;
+    border: 2px solid var(--yellow);
+    color: var(--yellow);
+    padding: 15px;
+    font: 12px/1.5 var(--mono);
+    transform: rotate(8deg);
+    animation: stampIn 1s 1s both;
+}
+
+/* MOVING TEXT */
+
+.marquee {
+    background: var(--yellow);
+    overflow: hidden;
+    padding: 17px 0;
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee span {
+    font: 800 20px var(--display);
+    padding: 0 30px;
+}
+
+/* GENERAL SECTION */
+
+section.content {
+    padding: 110px 9%;
+}
+
+.section-label {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #b5b5a9;
+    padding-bottom: 15px;
+    font: 10px var(--mono);
+    color: #77796f;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    font: 900 clamp(60px, 9vw, 115px)/.85 var(--display);
+    letter-spacing: -2px;
+    margin: 65px 0 45px;
+}
+
+.section-title em {
+    font-style: normal;
+    color: #929589;
+}
+
+/* BACKGROUND */
+
+.background-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+}
+
+.background-text {
+    font-size: 14px;
+    line-height: 2;
+    color: #55584f;
+}
+
+.background-text p {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    border-left: 3px solid #a7bd39;
+    padding-left: 18px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 65px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    padding: 30px 0;
+    gap: 20px;
+}
+
+.stat strong {
+    display: block;
+    font: 800 60px var(--display);
+}
+
+.stat span {
+    font: 10px/1.7 var(--mono);
+    color: #77796f;
+}
+
+/* DEKRIT */
+
+.decree {
+    background: var(--black);
+    color: var(--white);
+    padding: 110px 9%;
+    position: relative;
+    overflow: hidden;
+}
+
+.decree::before {
+    content: "1959";
+    position: absolute;
+    right: -30px;
+    top: 10%;
+    font: 900 30vw var(--display);
+    color: rgba(255,255,255,.025);
+}
+
+.decree-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    position: relative;
+    z-index: 2;
+    margin-top: 70px;
+}
+
+.decree h2 {
+    font: 900 clamp(85px, 13vw, 160px)/.8 var(--display);
+}
+
+.decree h2 span {
+    color: var(--yellow);
+}
+
+.decree-date {
+    display: inline-block;
+    border: 1px solid var(--yellow);
+    color: var(--yellow);
+    padding: 15px 20px;
+    font: 13px var(--mono);
+    margin-top: 40px;
+    transform: rotate(-4deg);
+}
+
+.decree-text {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #c5c7bd;
+}
+
+.decree-list {
+    margin-top: 30px;
+}
+
+.decree-item {
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 15px;
+}
+
+.decree-item b {
+    color: var(--yellow);
+    font: 12px var(--mono);
+}
+
+/* TIMELINE */
+
+.timeline {
+    background: #e1e0d6;
+}
+
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-top: 70px;
+    position: relative;
+}
+
+.timeline-card {
+    border-top: 2px solid #a9b94b;
+    padding-top: 20px;
+    position: relative;
+}
+
+.timeline-card::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--yellow);
+    border: 2px solid #879535;
+    border-radius: 50%;
+}
+
+.timeline-card small {
+    font: 10px var(--mono);
+    color: #8a943c;
+}
+
+.timeline-card h3 {
+    font: 700 30px var(--display);
+    margin: 15px 0;
+}
+
+.timeline-card p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #62655b;
+}
+
+/* MPRS AND DPAS */
+
+.institution {
+    background: #171916;
+    color: var(--white);
+    padding: 100px 9%;
+}
+
+.institution h2 {
+    font: 900 clamp(100px, 15vw, 180px)/.8 var(--display);
+    margin: 30px 0;
+}
+
+.institution h2 span {
+    color: var(--yellow);
+}
+
+.institution-lead {
+    color: #bfc1b7;
+    max-width: 550px;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 55px;
+}
+
+.institution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.info {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+}
+
+.info small {
+    font: 10px var(--mono);
+    color: var(--yellow);
+}
+
+.info h3 {
+    font: 700 27px var(--display);
+    margin: 15px 0 8px;
+}
+
+.info p {
+    color: #b5b8ad;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* COMPARISON */
+
+.comparison {
+    background: #e7e6dc;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 20px 12px;
+    border-bottom: 1px solid #bfc0b5;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.compare-table th {
+    font: 10px var(--mono);
+    background: #d9d9ce;
+}
+
+.compare-table td:first-child {
+    font-weight: 700;
+}
+
+/* POWER SHIFT */
+
+.power {
+    background: var(--black);
+    color: var(--white);
+    padding: 110px 9%;
+    overflow: hidden;
+}
+
+.power-title {
+    font: 900 clamp(90px, 15vw, 180px)/.8 var(--display);
+    margin: 40px 0;
+}
+
+.power-title span {
+    color: var(--yellow);
+}
+
+.power-intro {
+    max-width: 650px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #b9bbb1;
+    margin-bottom: 65px;
+}
+
+.diagram {
+    border: 1px solid var(--line);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.diagram-label {
+    color: var(--yellow);
+    font: 10px var(--mono);
+    margin-bottom: 35px;
+}
+
+.diagram-flow {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.diagram-side h3 {
+    font: 700 24px var(--display);
+    margin-bottom: 25px;
+}
+
+.node {
+    border: 1px solid #74796a;
+    padding: 15px 10px;
+    margin: 10px auto;
+    max-width: 180px;
+    font: 12px var(--mono);
+}
+
+.node.president {
+    border-color: var(--yellow);
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+.node.dominant {
+    background: var(--yellow);
+    color: var(--black);
+    animation: glow 3s infinite;
+}
+
+.arrow {
+    color: var(--yellow);
+    font-size: 35px;
+    animation: arrow 1.5s infinite;
+}
+
+.diagram-note {
+    color: #8e9187;
+    font-size: 10px;
+    margin-top: 30px;
+    line-height: 1.7;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.impact {
+    background: #1b1e19;
+    border-top: 2px solid var(--yellow);
+    padding: 25px;
+}
+
+.impact small {
+    color: var(--yellow);
+    font: 11px var(--mono);
+}
+
+.impact h3 {
+    font: 700 27px var(--display);
+    margin: 20px 0 12px;
+}
+
+.impact p {
+    font-size: 11px;
+    line-height: 1.8;
+    color: #b7b9ae;
+}
+
+.conclusion {
+    border: 1px solid var(--yellow);
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.conclusion h3 {
+    font: 12px var(--mono);
+    color: var(--yellow);
+    margin-bottom: 15px;
+}
+
+.conclusion p {
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* GALLERY */
+
+.gallery {
+    background: #deddd3;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 15px;
+    margin-top: 45px;
+}
+
+.gallery-item {
+    height: 250px;
+    background: #a6a89d;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: .7s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+    filter: grayscale(20%);
+}
+
+.gallery-item p {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font: 700 23px var(--display);
+    text-shadow: 0 2px 10px black;
+}
+
+/* QUIZ */
+
+.quiz {
+    background: #20221e;
+    color: var(--white);
+    padding: 100px 9%;
+}
+
+.quiz-box {
+    max-width: 700px;
+    margin: 50px auto 0;
+    border: 1px solid var(--line);
+    padding: 30px;
+}
+
+.quiz-box h3 {
+    font: 700 30px var(--display);
+    margin: 25px 0;
+}
+
+.option {
+    width: 100%;
+    padding: 15px;
+    margin: 6px 0;
+    background: transparent;
+    border: 1px solid #55594d;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    font-size: 12px;
+    transition: .2s;
+}
+
+.option:hover {
+    border-color: var(--yellow);
+}
+
+.option.correct {
+    background: #36401b;
+    border-color: var(--yellow);
+}
+
+.option.wrong {
+    background: #512d27;
+    border-color: #d77965;
+}
+
+#feedback {
+    color: var(--yellow);
+    font-size: 12px;
+    margin-top: 15px;
+    line-height: 1.7;
+}
+
+#next {
+    margin-top: 20px;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 13px 22px;
+    border: none;
+    cursor: pointer;
+    font: 11px var(--mono);
+}
+
+/* SOURCES */
+
+.sources {
+    padding: 100px 9%;
+    background: var(--white);
+}
+
+.source-link {
+    display: block;
+    padding: 23px 10px;
+    border-bottom: 1px solid #c0c1b6;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.source-link:hover {
+    background: #dedfd3;
+    padding-left: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 45px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer p {
+    font: 10px var(--mono);
+    color: #aaa;
+}
+
+/* REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ANIMATION KEYFRAMES */
+
+@keyframes titleUp {
+    from { transform: translateY(110%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes zoom {
+    from { transform: scale(1.12); }
+    to { transform: scale(1); }
+}
+
+@keyframes stampIn {
+    from { opacity: 0; transform: rotate(20deg) scale(1.5); }
+    to { opacity: 1; transform: rotate(8deg) scale(1); }
+}
+
+@keyframes marquee {
+    to { transform: translateX(-50%); }
+}
+
+@keyframes glow {
+    0%,100% { box-shadow: 0 0 0 transparent; }
+    50% { box-shadow: 0 0 25px rgba(215,240,74,.3); }
+}
+
+@keyframes arrow {
+    0%,100% { transform: translateX(0); }
+    50% { transform: translateX(8px); }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 750px) {
+    header { padding: 0 6%; }
+    .menu { display: block; }
+    nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--black);
+        padding: 25px;
+        flex-direction: column;
+    }
+    nav.open { display: flex; }
+    .hero h1 { font-size: 19vw; }
+    .hero-bottom { align-items: start; }
+    .hero-date { display: none; }
+    section.content,.decree,.institution,.power,.quiz,.sources { padding: 75px 7%; }
+    .background-grid,.decree-grid { grid-template-columns: 1fr; gap: 35px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .timeline-grid { grid-template-columns: 1fr 1fr; }
+    .institution-grid { grid-template-columns: 1fr 1fr; }
+    .diagram-flow { grid-template-columns: 1fr; }
+    .arrow { transform: rotate(90deg); }
+    .impact-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item { height: 180px; }
+    .compare-table th,.compare-table td { padding: 12px 6px; font-size: 10px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+}
+
+/* FLOATING EMOJI ANIMATION */
+
+#float-layer {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.floaty {
+    position: absolute;
+    bottom: -60px;
+    display: block;
+    opacity: 0;
+    animation: floatUp var(--dur) linear forwards;
+    will-change: transform, opacity;
+    user-select: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(var(--drift), -55vh) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, -110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+
+/* ===== ADDITIONAL HISTORY SECTIONS ===== */
+.dprgr-section { background:#e7e6dc; color:var(--black); padding:100px 9%; }
+.dprgr-grid,.case-grid,.formal-grid,.archive-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; margin-top:45px; }
+.light-card { border:1px solid #b9baae; padding:26px; background:rgba(255,255,255,.22); }
+.light-card small,.dark-card small { color:#84952d; font:10px var(--mono); letter-spacing:1px; }
+.light-card h3,.dark-card h3 { font:700 30px var(--display); margin:13px 0; }
+.light-card p,.dark-card p { font-size:13px; line-height:1.9; color:#55584f; }
+.dark-section { background:#171916; color:var(--white); padding:100px 9%; }
+.dark-card { border:1px solid var(--line); padding:26px; background:#1d201b; }
+.dark-card p { color:#c1c3b9; }
+.case-number { font:900 58px var(--display); color:var(--yellow); line-height:1; }
+.case-question { margin-top:35px; padding:25px; border-left:3px solid var(--yellow); background:#22251f; }
+.case-question h3 { font:700 27px var(--display); margin-bottom:10px; }
+.case-question p { font-size:13px; line-height:1.9; color:#c1c3b9; }
+.formal-grid { grid-template-columns:1fr 1fr; }
+.formal-column { padding:25px; border-top:3px solid var(--yellow); background:#20231e; }
+.formal-column h3 { font:700 32px var(--display); margin-bottom:18px; }
+.formal-column li { margin:0 0 14px 18px; color:#c2c4ba; font-size:13px; line-height:1.8; }
+.interactive-map { margin-top:40px; border:1px solid var(--line); padding:28px; }
+.map-buttons { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.map-button { border:1px solid #74796a; color:var(--white); background:transparent; padding:13px 18px; font:11px var(--mono); cursor:pointer; transition:.25s; }
+.map-button:hover,.map-button.active { background:var(--yellow); color:var(--black); border-color:var(--yellow); }
+.map-detail { min-height:120px; margin-top:25px; padding:22px; background:#20231e; border-left:3px solid var(--yellow); }
+.map-detail h3 { color:var(--yellow); font:700 27px var(--display); margin-bottom:8px; }
+.map-detail p { color:#c1c3b9; font-size:13px; line-height:1.9; }
+.archive-card { display:flex; flex-direction:column; gap:13px; border:1px solid #b9baae; padding:23px; min-height:190px; }
+.archive-card .archive-tag { color:#899b2c; font:10px var(--mono); }
+.archive-card h3 { font:700 27px var(--display); }
+.archive-card p { font-size:12px; line-height:1.8; color:#55584f; }
+.archive-card a { margin-top:auto; font:11px var(--mono); color:#64751d; text-decoration:underline; }
+.glossary-list { margin-top:35px; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.glossary-item { border:1px solid var(--line); background:#20231e; color:var(--white); padding:0; }
+.glossary-item summary { padding:18px; cursor:pointer; color:var(--yellow); font:13px var(--mono); }
+.glossary-item p { padding:0 18px 18px; color:#c1c3b9; font-size:12px; line-height:1.8; }
+@media(max-width:750px) {
+  .dprgr-grid,.case-grid,.formal-grid,.archive-grid,.glossary-list { grid-template-columns:1fr; }
+  .dark-section,.dprgr-section { padding:75px 7%; }
+  nav { gap:15px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING ANIMATION LAYER -->
+<div id="float-layer"></div>
+
+<div class="progress" id="progress"></div>
+
+<header>
+    <a href="#home" class="logo">ARSIP<span>1959</span>®</a>
+
+    <button class="menu" id="menu">☰</button>
+
+    <nav id="navigation">
+        <a href="#latar">LATAR</a>
+        <a href="#dekrit">DEKRIT</a>
+        <a href="#mprs">MPRS</a>
+        <a href="#dpas">DPAS</a>
+        <a href="#dprgr">DPR-GR</a>
+        <a href="#dampak">POWER SHIFT</a>
+        <a href="#kasus">KASUS</a>
+        <a href="#dokumen">DOKUMEN</a>
+        <a href="#arsip">ARSIP</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div class="hero-image"></div>
+
+    <div class="hero-content">
+        <p class="eyebrow reveal">kelompok DUA / AKHDANNELOJULI</p>
+
+        <h1>
+            <span>THE SHIFT</span>
+            <span class="yellow">OF POWER.</span>
+        </h1>
+
+        <div class="hero-bottom">
+            <p class="hero-description reveal">
+                Pembentukan MPRS dan DPAS menjadi bagian penting
+                dari perubahan sistem ketatanegaraan Indonesia
+                setelah Dekrit Presiden 5 Juli 1959.
+            </p>
+
+            <p class="hero-date reveal">
+                SEJARAH POLITIK<br>
+                1959 — 1967
+            </p>
+        </div>
+    </div>
+
+    <div class="stamp">
+        ARSIP <br>
+        INDONESIA<br>
+        <b>1959</b>
+    </div>
+</section>
+
+<div class="marquee">
+    <div class="marquee-track">
+        <span>DEMOKRASI TERPIMPIN ✳ MPRS ✳ DPAS ✳ DISTRIBUSI KEKUASAAN ✳</span>
+        <span>KELOMPOK 22222 ✳ AKHDAN ✳ NELO ✳ JULI ✳</span>
+        <span>DEMOKRASI TERPIMPIN ✳ MPRS ✳ DPAS ✳ DISTRIBUSI KEKUASAAN ✳</span>
+        <span>KELOMPOK 22222 ✳ AKHDAN ✳ NELO ✳ JULI ✳</span>
+        <span>DEMOKRASI TERPIMPIN ✳ MPRS ✳ DPAS ✳ DISTRIBUSI KEKUASAAN ✳</span>
+        <span>KELOMPOK 22222 ✳ AKHDAN ✳ NELO ✳ JULI ✳</span>
+    </div>
+</div>
+
+<!-- LATAR BELAKANG -->
+
+<section class="content" id="latar">
+    <div class="section-label">
+        <span>01 / KONTEKS</span>
+        <span>SEBELUM 1959</span>
+    </div>
+
+    <div class="background-grid">
+        <div>
+            <p class="eyebrow reveal">MENGAPA SISTEM BERUBAH?</p>
+            <h2 class="section-title reveal">
+                SEBUAH NEGARA<br>
+                <em>MENCARI ARAH.</em>
+            </h2>
+        </div>
+
+        <div class="background-text reveal">
+            <p>
+                Setelah pengakuan kedaulatan, Indonesia menjalankan
+                Demokrasi Liberal dengan berlandaskan UUDS 1950.
+                Dalam sistem parlementer, kabinet bertanggung jawab
+                kepada parlemen.
+            </p>
+
+            <p>
+                Namun, pergantian kabinet yang relatif sering dan
+                perbedaan pandangan politik membuat pemerintahan
+                menghadapi ketidakstabilan.
+            </p>
+
+            <p>
+                Di sisi lain, Konstituante hasil Pemilu 1955 belum
+                berhasil mencapai kesepakatan mengenai undang-undang
+                dasar baru.
+            </p>
+
+            <p class="highlight">
+                Situasi tersebut menjadi salah satu latar belakang
+                dikeluarkannya Dekrit Presiden 5 Juli 1959.
+            </p>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stat reveal">
+            <strong>1950</strong>
+            <span>UUDS MULAI<br>BERLAKU</span>
+        </div>
+
+        <div class="stat reveal">
+            <strong>1955</strong>
+            <span>PEMILU PERTAMA<br>INDONESIA</span>
+        </div>
+
+        <div class="stat reveal">
+            <strong>1959</strong>
+            <span>PERUBAHAN ARAH<br>KETATANEGARAAN</span>
+        </div>
+    </div>
+</section>
+
+<!-- DEKRIT -->
+
+<section class="decree" id="dekrit">
+    <div class="section-label">
+        <span>02 / TITIK BALIK</span>
+        <span>5 JULI 1959</span>
+    </div>
+
+    <div class="decree-grid">
+        <div>
+            <p class="eyebrow reveal">PRESIDENTIAL DECREE</p>
+
+            <h2 class="reveal">
+                DEKRIT<br>
+                <span>PRESIDEN.</span>
+            </h2>
+
+            <div class="decree-date reveal">
+                05 JULI 1959
+            </div>
+        </div>
+
+        <div class="decree-text reveal">
+            <p>
+                Pada 5 Juli 1959, Presiden Soekarno mengeluarkan
+                Dekrit Presiden yang mengubah arah kehidupan
+                ketatanegaraan Indonesia.
+            </p>
+
+            <div class="decree-list">
+                <div class="decree-item">
+                    <b>01</b>
+                    <span>Membubarkan Konstituante.</span>
+                </div>
+
+                <div class="decree-item">
+                    <b>02</b>
+                    <span>Memberlakukan kembali UUD 1945 dan menyatakan UUDS 1950 tidak berlaku.</span>
+                </div>
+
+                <div class="decree-item">
+                    <b>03</b>
+                    <span>Memerintahkan pembentukan MPRS dan DPAS dalam waktu sesingkat-singkatnya.</span>
+                </div>
+            </div>
+
+            <p style="margin-top:25px">
+                Dekrit ini menjadi penanda berakhirnya Demokrasi
+                Liberal dan dimulainya masa Demokrasi Terpimpin.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- TIMELINE -->
+
+<section class="content timeline">
+    <div class="section-label">
+        <span>03 / KRONOLOGI</span>
+        <span>1959—1967</span>
+    </div>
+
+    <h2 class="section-title reveal">
+        GARIS WAKTU<br>
+        <em>PERUBAHAN.</em>
+    </h2>
+
+    <div class="timeline-grid">
+
+        <div class="timeline-card reveal">
+            <small>05 JULI 1959</small>
+            <h3>Dekrit Presiden</h3>
+            <p>
+                UUD 1945 diberlakukan kembali. Pembentukan MPRS
+                dan DPAS diperintahkan.
+            </p>
+        </div>
+
+        <div class="timeline-card reveal">
+            <small>22 JULI 1959</small>
+            <h3>Pembentukan MPRS</h3>
+            <p>
+                Penetapan Presiden No. 2 Tahun 1959 menjadi
+                dasar pembentukan MPRS.
+            </p>
+        </div>
+
+        <div class="timeline-card reveal">
+            <small>JULI 1959</small>
+            <h3>Pembentukan DPAS</h3>
+            <p>
+                Penetapan Presiden No. 3 Tahun 1959 mengatur
+                pembentukan DPAS.
+            </p>
+        </div>
+
+        <div class="timeline-card reveal">
+            <small>10 NOVEMBER 1960</small>
+            <h3>MPRS Dilantik</h3>
+            <p>
+                MPRS diresmikan dalam sidang pelantikan di Bandung.
+            </p>
+        </div>
+
+        <div class="timeline-card reveal">
+            <small>1960</small>
+            <h3>DPR-GR</h3>
+            <p>
+                DPR hasil Pemilu 1955 dibubarkan dan digantikan
+                dengan DPR Gotong Royong.
+            </p>
+        </div>
+
+        <div class="timeline-card reveal">
+            <small>1963</small>
+            <h3>Presiden Seumur Hidup</h3>
+            <p>
+                TAP MPRS No. III/MPRS/1963 menetapkan Soekarno
+                sebagai Presiden seumur hidup.
+            </p>
+        </div>
+
+        <div class="timeline-card reveal">
+            <small>1967</small>
+            <h3>Peralihan Kekuasaan</h3>
+            <p>
+                MPRS mencabut kekuasaan pemerintahan dari
+                Presiden Soekarno dan mengangkat Soeharto
+                sebagai Pejabat Presiden.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- MPRS -->
+
+<section class="institution" id="mprs">
+    <div class="section-label">
+        <span>04 / LEMBAGA NEGARA</span>
+        <span>01 — MPRS</span>
+    </div>
+
+    <p class="eyebrow reveal" style="margin-top:65px">
+        MAJELIS PERMUSYAWARATAN RAKYAT SEMENTARA
+    </p>
+
+    <h2 class="reveal">MPRS<span>.</span></h2>
+
+    <p class="institution-lead reveal">
+        MPRS merupakan lembaga permusyawaratan yang dibentuk
+        setelah Dekrit Presiden 1959. Keberadaannya menjadi
+        bagian dari susunan ketatanegaraan pada masa
+        Demokrasi Terpimpin.
+    </p>
+
+    <div class="institution-grid">
+        <div class="info reveal">
+            <small>01 / DASAR PEMBENTUKAN</small>
+            <h3>Penpres No. 2 Tahun 1959</h3>
+            <p>
+                Menjadi dasar hukum pembentukan Majelis
+                Permusyawaratan Rakyat Sementara.
+            </p>
+        </div>
+
+        <div class="info reveal">
+            <small>02 / KEANGGOTAAN</small>
+            <h3>Unsur Perwakilan</h3>
+            <p>
+                Terdiri dari anggota DPR-GR serta utusan
+                daerah dan golongan yang diangkat sesuai
+                ketentuan saat itu.
+            </p>
+        </div>
+
+        <div class="info reveal">
+            <small>03 / TUGAS</small>
+            <h3>Menetapkan GBHN</h3>
+            <p>
+                Menetapkan Garis-Garis Besar Haluan Negara
+                dan keputusan penting dalam kehidupan
+                ketatanegaraan.
+            </p>
+        </div>
+
+        <div class="info reveal">
+            <small>04 / CONTOH KETETAPAN</small>
+            <h3>TAP MPRS</h3>
+            <p>
+                TAP I/MPRS/1960 tentang Manifesto Politik
+                sebagai GBHN dan TAP III/MPRS/1963 tentang
+                Presiden seumur hidup.
+            </p>
+        </div>
+    </div>
+
+    <div style="margin-top:55px;border-top:1px solid var(--line);padding-top:25px" class="reveal">
+        <strong style="font:900 75px var(--display);color:var(--yellow)">732</strong>
+        <p style="font:10px var(--mono);color:#aaa">
+            ANGGOTA MPRS MENURUT DATA MPR RI TERTENTU
+        </p>
+        <p style="font-size:11px;line-height:1.8;color:#aaa;margin-top:15px">
+            Komposisi yang dicatat: 257 DPR-GR, 241 utusan golongan,
+            dan 118 utusan daerah. Sejumlah publikasi mencatat
+            angka utusan daerah yang berbeda.
+        </p>
+    </div>
+</section>
+
+<!-- DPAS -->
+
+<section class="institution" id="dpas" style="background:#20221e">
+    <div class="section-label">
+        <span>05 / LEMBAGA NEGARA</span>
+        <span>02 — DPAS</span>
+    </div>
+
+    <p class="eyebrow reveal" style="margin-top:65px">
+        DEWAN PERTIMBANGAN AGUNG SEMENTARA
+    </p>
+
+    <h2 class="reveal">DPAS<span>.</span></h2>
+
+    <p class="institution-lead reveal">
+        DPAS merupakan badan penasihat yang memberikan
+        pertimbangan kepada Presiden. Lembaga ini tidak
+        menjalankan pemerintahan sehari-hari.
+    </p>
+
+    <div class="institution-grid">
+        <div class="info reveal">
+            <small>01 / DASAR PEMBENTUKAN</small>
+            <h3>Penpres No. 3 Tahun 1959</h3>
+            <p>
+                Menjadi dasar pembentukan Dewan Pertimbangan
+                Agung Sementara.
+            </p>
+        </div>
+
+        <div class="info reveal">
+            <small>02 / KEPENGURUSAN</small>
+            <h3>Presiden sebagai Ketua</h3>
+            <p>
+                Presiden Soekarno menjabat sebagai ketua DPAS.
+            </p>
+        </div>
+
+        <div class="info reveal">
+            <small>03 / KEANGGOTAAN</small>
+            <h3>Diangkat Presiden</h3>
+            <p>
+                Anggota diangkat dan diberhentikan oleh Presiden,
+                berasal dari golongan politik, golongan fungsional,
+                dan tokoh masyarakat.
+            </p>
+        </div>
+
+        <div class="info reveal">
+            <small>04 / FUNGSI</small>
+            <h3>Memberi Pertimbangan</h3>
+            <p>
+                Menjawab pertanyaan Presiden dan mengajukan
+                usul atau pertimbangan kepada pemerintah.
+            </p>
+        </div>
+    </div>
+
+    <p class="institution-lead reveal" style="margin-top:50px;margin-bottom:0;border-left:3px solid var(--yellow);padding-left:20px">
+        Poin penting: posisi Presiden sebagai ketua sekaligus
+        pihak yang mengangkat anggota membuat hubungan DPAS
+        dengan Presiden sangat dekat.
+    </p>
+</section>
+
+
+
+<!-- DPR-GR -->
+<section class="dprgr-section" id="dprgr">
+  <div class="section-label">
+    <span>06 / PERUBAHAN LEMBAGA PERWAKILAN</span>
+    <span>1960</span>
+  </div>
+  <h2 class="section-title reveal">DPR-GR.<br><em>PERWAKILAN BARU.</em></h2>
+  <p class="background-text reveal">
+    DPR-GR (Dewan Perwakilan Rakyat Gotong Royong) dibentuk pada 1960
+    setelah Presiden Soekarno membubarkan DPR hasil Pemilu 1955.
+    Perubahan ini memperlihatkan bahwa susunan lembaga perwakilan
+    mengalami perubahan besar pada awal Demokrasi Terpimpin.
+  </p>
+  <div class="dprgr-grid">
+    <article class="light-card reveal">
+      <small>01 / LATAR BELAKANG</small>
+      <h3>DPR hasil Pemilu 1955</h3>
+      <p>
+        Dalam perkembangan politik 1960, terjadi ketegangan antara Presiden
+        dan DPR ketika DPR tidak menyetujui rancangan anggaran negara.
+        Setelah itu, DPR dibubarkan oleh Presiden.
+      </p>
+    </article>
+    <article class="light-card reveal">
+      <small>02 / PEMBENTUKAN</small>
+      <h3>DPR-GR</h3>
+      <p>
+        Presiden kemudian membentuk DPR-GR melalui Penetapan Presiden
+        No. 4 Tahun 1960. Keanggotaan lembaga baru ini ditentukan melalui
+        pengangkatan, bukan melalui pemilu baru.
+      </p>
+    </article>
+    <article class="light-card reveal">
+      <small>03 / FUNGSI</small>
+      <h3>Lembaga Perwakilan</h3>
+      <p>
+        DPR-GR tetap menjalankan fungsi perwakilan dan pembentukan
+        peraturan bersama pemerintah. Namun, proses pembentukan dan
+        komposisi anggotanya menunjukkan besarnya pengaruh Presiden.
+      </p>
+    </article>
+    <article class="light-card reveal">
+      <small>04 / DAMPAK</small>
+      <h3>Perubahan Kontrol Politik</h3>
+      <p>
+        Pergantian DPR hasil pemilu menjadi DPR-GR mengubah hubungan
+        antara lembaga perwakilan dan eksekutif. Hal ini menjadi salah
+        satu contoh menguatnya posisi Presiden dalam sistem politik.
+      </p>
+    </article>
+  </div>
+  <p class="highlight" style="margin-top:35px">
+    Catatan analisis: perubahan ini tidak berarti DPR-GR tidak memiliki
+    fungsi, tetapi mekanisme pembentukan dan keanggotaannya berbeda
+    dari DPR hasil Pemilu 1955.
+  </p>
+</section>
+
+<!-- PERBANDINGAN -->
+
+<section class="content comparison">
+    <div class="section-label">
+        <span>06 / PERBANDINGAN</span>
+        <span>SEBELUM & SESUDAH</span>
+    </div>
+
+    <h2 class="section-title reveal">
+        DUA SISTEM.<br>
+        <em>ARAH BERBEDA.</em>
+    </h2>
+
+    <div style="overflow-x:auto">
+        <table class="compare-table">
+            <tr>
+                <th>ASPEK</th>
+                <th>DEMOKRASI LIBERAL</th>
+                <th>DEMOKRASI TERPIMPIN</th>
+            </tr>
+
+            <tr>
+                <td>Dasar konstitusi</td>
+                <td>UUDS 1950</td>
+                <td>UUD 1945 diberlakukan kembali</td>
+            </tr>
+
+            <tr>
+                <td>Peran Presiden</td>
+                <td>Kepala negara, pemerintahan dijalankan kabinet</td>
+                <td>Presiden menjadi pusat kepemimpinan politik</td>
+            </tr>
+
+            <tr>
+                <td>Hubungan kabinet</td>
+                <td>Bertanggung jawab kepada parlemen</td>
+                <td>Lebih terpusat pada kepemimpinan Presiden</td>
+            </tr>
+
+            <tr>
+                <td>Lembaga perwakilan</td>
+                <td>DPR hasil Pemilu 1955</td>
+                <td>MPRS dan DPR-GR dalam susunan baru</td>
+            </tr>
+
+            <tr>
+                <td>Kontrol kekuasaan</td>
+                <td>Persaingan partai dan parlemen menjadi ruang kontrol</td>
+                <td>Pengaruh eksekutif semakin kuat</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- ANALISIS DISTRIBUSI KEKUASAAN -->
+
+<section class="power" id="dampak">
+    <div class="section-label" style="color:#aaa;border-color:var(--line)">
+        <span>07 / ANALISIS UTAMA</span>
+        <span>DISTRIBUSI KEKUASAAN</span>
+    </div>
+
+    <p class="eyebrow reveal" style="margin-top:65px">
+        APA YANG BERUBAH?
+    </p>
+
+    <h2 class="power-title reveal">
+        KEKUASAAN<br>
+        <span>BERGESER.</span>
+    </h2>
+
+    <p class="power-intro reveal">
+        Pembentukan MPRS dan DPAS mengubah susunan lembaga negara.
+        Namun, perubahan paling penting bukan hanya munculnya
+        lembaga baru, melainkan bagaimana hubungan lembaga-lembaga
+        tersebut dengan Presiden.
+    </p>
+
+    <div class="diagram reveal">
+        <p class="diagram-label">
+            GAMBARAN SEDERHANA PUSAT PENGARUH POLITIK
+        </p>
+
+        <div class="diagram-flow">
+            <div class="diagram-side">
+                <h3>SEBELUM 1959</h3>
+                <div class="node president">PRESIDEN</div>
+                <div class="node">KABINET</div>
+                <div class="node">DPR</div>
+                <div class="node">PARTAI POLITIK</div>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="diagram-side">
+                <h3>SETELAH 1959</h3>
+                <div class="node president dominant">PRESIDEN</div>
+                <div class="node">MPRS</div>
+                <div class="node">DPAS</div>
+                <div class="node">DPR-GR</div>
+            </div>
+        </div>
+
+        <p class="diagram-note">
+            Diagram ini merupakan gambaran konseptual tentang
+            arah pengaruh politik, bukan bagan hierarki hukum resmi.
+        </p>
+    </div>
+
+    <div class="impact-grid">
+        <div class="impact reveal">
+            <small>01</small>
+            <h3>Kekuasaan Eksekutif Menguat</h3>
+            <p>
+                Presiden memiliki pengaruh besar dalam pembentukan
+                lembaga dan arah politik negara. Posisi Presiden
+                tidak lagi terbatas seperti dalam sistem parlementer.
+            </p>
+        </div>
+
+        <div class="impact reveal">
+            <small>02</small>
+            <h3>Representasi Berubah</h3>
+            <p>
+                Keanggotaan MPRS tidak seluruhnya berasal dari
+                pemilihan umum langsung. Pengangkatan anggota
+                memberi Presiden pengaruh terhadap komposisi lembaga.
+            </p>
+        </div>
+
+        <div class="impact reveal">
+            <small>03</small>
+            <h3>Kontrol Melemah</h3>
+            <p>
+                Ketika lembaga perwakilan dan penasihat memiliki
+                hubungan erat dengan Presiden, kemampuan lembaga
+                menjadi penyeimbang kekuasaan menjadi terbatas.
+            </p>
+        </div>
+    </div>
+
+    <div class="conclusion reveal">
+        <h3>KESIMPULAN</h3>
+        <p>
+            Perubahan lembaga negara setelah Dekrit 1959 membuat
+            kekuasaan politik semakin terpusat pada Presiden Soekarno.
+            MPRS dan DPAS memang dibentuk untuk menjalankan fungsi
+            ketatanegaraan, tetapi proses pengangkatan anggota dan
+            kuatnya pengaruh Presiden menyebabkan distribusi
+            kekuasaan menjadi kurang seimbang.
+        </p>
+    </div>
+</section>
+
+
+
+<!-- STUDI KASUS -->
+<section class="dark-section" id="kasus">
+  <div class="section-label" style="color:#aaa;border-color:var(--line)">
+    <span>09 / STUDI KASUS</span>
+    <span>BUKTI PERGESERAN KEKUASAAN</span>
+  </div>
+  <h2 class="power-title reveal">KETIKA<br><span>KUASA BERUBAH.</span></h2>
+  <p class="power-intro reveal">
+    Perubahan distribusi kekuasaan dapat dipahami melalui peristiwa nyata.
+    Dua contoh berikut memperlihatkan hubungan antara keputusan lembaga
+    negara, Presiden, dan lembaga perwakilan pada masa Demokrasi Terpimpin.
+  </p>
+  <div class="case-grid">
+    <article class="dark-card reveal">
+      <div class="case-number">01</div>
+      <small>1960 / DPR-GR</small>
+      <h3>Pergantian DPR</h3>
+      <p>
+        Setelah DPR hasil Pemilu 1955 dibubarkan pada 1960, Presiden
+        membentuk DPR-GR dengan anggota yang diangkat. Perubahan ini
+        memperlihatkan bahwa komposisi lembaga perwakilan semakin
+        dipengaruhi oleh keputusan Presiden.
+      </p>
+    </article>
+    <article class="dark-card reveal">
+      <div class="case-number">02</div>
+      <small>1963 / TAP MPRS</small>
+      <h3>Presiden Seumur Hidup</h3>
+      <p>
+        TAP MPRS No. III/MPRS/1963 menetapkan Presiden Soekarno sebagai
+        Presiden seumur hidup. Keputusan ini menjadi contoh penting
+        untuk mengkaji hubungan antara MPRS dan kedudukan Presiden.
+      </p>
+    </article>
+  </div>
+  <div class="case-question reveal">
+    <h3>PERTANYAAN KRITIS</h3>
+    <p>
+      Jika anggota lembaga negara diangkat oleh Presiden, bagaimana
+      kondisi tersebut dapat memengaruhi independensi lembaga dalam
+      menjalankan fungsi pengawasan terhadap pemerintah?
+    </p>
+  </div>
+</section>
+
+<!-- KEDUDUKAN FORMAL DAN PRAKTIK -->
+<section class="power" id="formal">
+  <div class="section-label" style="color:#aaa;border-color:var(--line)">
+    <span>10 / ANALISIS LEBIH DALAM</span>
+    <span>ATURAN & PRAKTIK</span>
+  </div>
+  <h2 class="power-title reveal">FORMAL<br><span>VS PRAKTIK.</span></h2>
+  <p class="power-intro reveal">
+    Untuk memahami distribusi kekuasaan, kita perlu membedakan kewenangan
+    resmi suatu lembaga dengan bagaimana hubungan kekuasaan berjalan
+    dalam praktik politik.
+  </p>
+  <div class="formal-grid">
+    <div class="formal-column reveal">
+      <h3>KEDUDUKAN FORMAL</h3>
+      <ul>
+        <li>MPRS merupakan lembaga permusyawaratan yang memiliki kewenangan ketatanegaraan.</li>
+        <li>DPAS bertugas memberikan jawaban, usul, atau pertimbangan kepada Presiden.</li>
+        <li>DPR-GR menjalankan fungsi perwakilan dalam susunan lembaga negara saat itu.</li>
+      </ul>
+    </div>
+    <div class="formal-column reveal">
+      <h3>PRAKTIK POLITIK</h3>
+      <ul>
+        <li>Anggota MPRS dan DPR-GR ditentukan melalui mekanisme pengangkatan.</li>
+        <li>Presiden Soekarno menjadi Ketua DPAS.</li>
+        <li>Pengaruh Presiden yang besar membuat hubungan antarlembaga tidak berjalan seimbang seperti prinsip pembagian kekuasaan yang ideal.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="conclusion reveal">
+    <h3>MAKNA UTAMA</h3>
+    <p>
+      Suatu lembaga dapat tetap memiliki kewenangan secara formal, tetapi
+      efektivitasnya sebagai penyeimbang kekuasaan juga dipengaruhi oleh
+      cara anggota dipilih atau diangkat serta hubungan politiknya dengan
+      lembaga eksekutif.
+    </p>
+  </div>
+</section>
+
+<!-- PETA HUBUNGAN LEMBAGA -->
+<section class="dark-section" id="hubungan">
+  <div class="section-label" style="color:#aaa;border-color:var(--line)">
+    <span>11 / INFOGRAFIS INTERAKTIF</span>
+    <span>KENALI LEMBAGANYA</span>
+  </div>
+  <h2 class="power-title reveal">SIAPA<br><span>BERPERAN?</span></h2>
+  <p class="power-intro reveal">
+    Pilih salah satu lembaga untuk melihat peran dan hubungannya dengan
+    Presiden pada masa Demokrasi Terpimpin.
+  </p>
+  <div class="interactive-map reveal">
+    <div class="map-buttons">
+      <button class="map-button active" data-map="presiden">PRESIDEN</button>
+      <button class="map-button" data-map="mprs">MPRS</button>
+      <button class="map-button" data-map="dpas">DPAS</button>
+      <button class="map-button" data-map="dprgr">DPR-GR</button>
+    </div>
+    <div class="map-detail" aria-live="polite">
+      <h3 id="map-title">PRESIDEN</h3>
+      <p id="map-description">
+        Presiden Soekarno menjadi pusat kepemimpinan politik pada masa
+        Demokrasi Terpimpin dan memiliki pengaruh besar dalam pembentukan
+        serta arah kerja lembaga negara.
+      </p>
+    </div>
+  </div>
+  <p class="diagram-note">
+    Infografis ini menjelaskan peran secara ringkas, bukan menunjukkan
+    bahwa semua lembaga berada dalam hierarki komando langsung Presiden.
+  </p>
+</section>
+
+<!-- ARSIP DOKUMEN -->
+<section class="dprgr-section" id="dokumen">
+  <div class="section-label">
+    <span>12 / DOKUMEN SEJARAH</span>
+    <span>ARSIP & RUJUKAN</span>
+  </div>
+  <h2 class="section-title reveal">JEJAK<br><em>DOKUMEN.</em></h2>
+  <p class="background-text reveal">
+    Dokumen hukum membantu kita menelusuri dasar pembentukan lembaga
+    dan keputusan penting pada masa Demokrasi Terpimpin. Gunakan tautan
+    berikut untuk mencari naskah atau informasi resminya.
+  </p>
+  <div class="archive-grid">
+    <article class="archive-card reveal">
+      <span class="archive-tag">05 JULI 1959</span>
+      <h3>Dekrit Presiden</h3>
+      <p>Dokumen yang memberlakukan kembali UUD 1945 dan memerintahkan pembentukan MPRS serta DPAS.</p>
+      <a href="https://peraturan.bpk.go.id/" target="_blank" rel="noopener">TELUSURI DI DATABASE BPK ↗</a>
+    </article>
+    <article class="archive-card reveal">
+      <span class="archive-tag">1959</span>
+      <h3>Penpres No. 2 Tahun 1959</h3>
+      <p>Dasar pembentukan Majelis Permusyawaratan Rakyat Sementara.</p>
+      <a href="https://peraturan.bpk.go.id/" target="_blank" rel="noopener">TELUSURI DI DATABASE BPK ↗</a>
+    </article>
+    <article class="archive-card reveal">
+      <span class="archive-tag">1959</span>
+      <h3>Penpres No. 3 Tahun 1959</h3>
+      <p>Dasar pembentukan Dewan Pertimbangan Agung Sementara.</p>
+      <a href="https://peraturan.bpk.go.id/" target="_blank" rel="noopener">TELUSURI DI DATABASE BPK ↗</a>
+    </article>
+    <article class="archive-card reveal">
+      <span class="archive-tag">1963</span>
+      <h3>TAP MPRS No. III/MPRS/1963</h3>
+      <p>Ketetapan mengenai pengangkatan Presiden Soekarno sebagai Presiden seumur hidup.</p>
+      <a href="https://www.mpr.go.id/" target="_blank" rel="noopener">TELUSURI DI MPR RI ↗</a>
+    </article>
+  </div>
+  <p style="font-size:11px;color:#777;margin-top:20px;line-height:1.8">
+    Tautan di atas mengarah ke portal lembaga resmi untuk penelusuran.
+    Pastikan nomor, judul, dan isi dokumen cocok sebelum mengutipnya.
+  </p>
+</section>
+
+<!-- GLOSARIUM -->
+<section class="dark-section" id="glosarium">
+  <div class="section-label" style="color:#aaa;border-color:var(--line)">
+    <span>13 / GLOSARIUM</span>
+    <span>ISTILAH PENTING</span>
+  </div>
+  <h2 class="power-title reveal">PAHAMI<br><span>ISTILAHNYA.</span></h2>
+  <p class="power-intro reveal">Tekan istilah untuk membuka penjelasannya.</p>
+  <div class="glossary-list reveal">
+    <details class="glossary-item">
+      <summary>DEMOKRASI TERPIMPIN</summary>
+      <p>Sistem politik Indonesia setelah Dekrit Presiden 5 Juli 1959, dengan kepemimpinan Presiden Soekarno yang semakin dominan.</p>
+    </details>
+    <details class="glossary-item">
+      <summary>MPRS</summary>
+      <p>Majelis Permusyawaratan Rakyat Sementara, lembaga permusyawaratan yang dibentuk pada masa awal Demokrasi Terpimpin.</p>
+    </details>
+    <details class="glossary-item">
+      <summary>DPAS</summary>
+      <p>Dewan Pertimbangan Agung Sementara, badan yang memberikan pertimbangan kepada Presiden.</p>
+    </details>
+    <details class="glossary-item">
+      <summary>DPR-GR</summary>
+      <p>Dewan Perwakilan Rakyat Gotong Royong, lembaga perwakilan yang dibentuk pada 1960 setelah DPR hasil Pemilu 1955 dibubarkan.</p>
+    </details>
+    <details class="glossary-item">
+      <summary>DEKRIT PRESIDEN</summary>
+      <p>Pernyataan Presiden Soekarno pada 5 Juli 1959 yang mengubah arah ketatanegaraan Indonesia.</p>
+    </details>
+    <details class="glossary-item">
+      <summary>DISTRIBUSI KEKUASAAN</summary>
+      <p>Pembagian kewenangan dan tanggung jawab di antara lembaga-lembaga negara.</p>
+    </details>
+    <details class="glossary-item">
+      <summary>LEGISLATIF</summary>
+      <p>Cabang kekuasaan negara yang berkaitan dengan pembentukan undang-undang.</p>
+    </details>
+    <details class="glossary-item">
+      <summary>EKSEKUTIF</summary>
+      <p>Cabang kekuasaan yang menjalankan pemerintahan dan melaksanakan undang-undang.</p>
+    </details>
+  </div>
+</section>
+
+<!-- GALERI -->
+
+<section class="content gallery" id="arsip">
+    <div class="section-label">
+        <span>08 / GALERI</span>
+        <span>ARSIP VISUAL</span>
+    </div>
+
+    <h2 class="section-title reveal">
+        POTONGAN<br>
+        <em>SEJARAH.</em>
+    </h2>
+
+    <div class="gallery-grid">
+        <div class="gallery-item reveal">
+            <img src="https://substackcdn.com/image/fetch/$s_!bWWK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd3f9d095-7730-4cee-b353-c44f2d0d1ee3_3000x2052.jpeg" alt="Presiden Soekarno">
+            <p>Soekarno</p>
+        </div>
+
+        <div class="gallery-item reveal">
+            <img src="https://images.openai.com/static-rsc-4/t39vyyie2Ln6l1LtmM3uPMyaCiA4GxD8uRf-0DtyctCBuZO4cJsjfu7WKo9yafDMMaBvr7M7SiftG4I1db6WEbf5j14RRrKsF7c_IJD27Bx0KN10k6rwmOiVuy9pIvv5PdQNbc1t6r0QvXZcSmzdJ3vlkNvznoX3dL5sf0Hg2dF8zmnwqXPG2xr2TbF_pduC?purpose=fullsize" alt="Dokumentasi sejarah">
+            <p>Dekrit Presiden</p>
+        </div>
+
+        <div class="gallery-item reveal">
+            <img src="https://images.openai.com/static-rsc-4/2OlNv81qsF2o5bI8p6ABDlF6YNGK0eUPYsFm52ZwWA5tofSxeZWTTePEBPTuX2NXJLh7KEMCJx2mCMb0DjBHQR1_5bfMPuJcgrzARfc8RpZq7pItRZlbPLDCUSMAFIQBYoXDnABDv0kOPshAHkY2vO3ZIVkawE8nvL5x8x7ENR6M_E1znRdjUlIkL2aLeIAS?purpose=fullsize" alt="Dokumen arsip">
+            <p>Sidang MPRS</p>
+        </div>
+    </div>
+    </p>
+</section>
+
+<!-- KUIS -->
+
+<section class="quiz">
+    <div class="section-label" style="color:#aaa;border-color:var(--line)">
+        <span>09 / UJI PEMAHAMAN</span>
+        <span>MINI QUIZ</span>
+    </div>
+
+    <h2 class="section-title reveal" style="color:white">
+        SEBERAPA<br>
+        <em style="color:var(--yellow)">PAHAM?</em>
+    </h2>
+
+    <div class="quiz-box reveal">
+        <small id="number" style="font:10px var(--mono);color:var(--yellow)">
+            PERTANYAAN 01 / 05
+        </small>
+
+        <h3 id="question">
+            Apa peristiwa yang memerintahkan pembentukan MPRS dan DPAS?
+        </h3>
+
+        <div id="options"></div>
+
+        <p id="feedback"></p>
+
+        <button id="next" disabled>LANJUT →</button>
+    </div>
+</section>
+
+<!-- SUMBER -->
+
+<section class="sources">
+    <div class="section-label">
+        <span>10 / REFERENSI</span>
+        <span>SUMBER SEJARAH</span>
+    </div>
+
+    <h2 class="section-title reveal">
+        TELUSURI<br>
+        <em>LEBIH JAUH.</em>
+    </h2>
+
+    <a class="source-link" href="https://www.kemenbud.go.id/" target="_blank">
+        01 — Kementerian Kebudayaan Republik Indonesia ↗
+    </a>
+
+    <a class="source-link" href="https://www.mpr.go.id/" target="_blank">
+        02 — Majelis Permusyawaratan Rakyat RI ↗
+    </a>
+
+    <a class="source-link" href="https://www.mkri.id/" target="_blank">
+        03 — Mahkamah Konstitusi RI ↗
+    </a>
+
+    <a class="source-link" href="https://peraturan.bpk.go.id/" target="_blank">
+        04 — Database Peraturan BPK RI ↗
+    </a>
+</section>
+
+<footer>
+    <div class="logo">ARSIP<span>1959</span>®</div>
+    <p>MEMBACA SEJARAH. MEMAHAMI KEKUASAAN.</p>
+    <p><a href="#glosarium">GLOSARIUM</a> / <a href="#dokumen">DOKUMEN</a></p>
+    <p>HISTORY PROJECT / 1959—1967</p>
+</footer>
+
+<script>
+
+
+// INTERACTIVE INSTITUTION MAP
+const mapInfo = {
+  presiden: {
+    title: "PRESIDEN",
+    description: "Presiden Soekarno menjadi pusat kepemimpinan politik pada masa Demokrasi Terpimpin dan memiliki pengaruh besar dalam pembentukan serta arah kerja lembaga negara."
+  },
+  mprs: {
+    title: "MPRS",
+    description: "MPRS menjalankan fungsi permusyawaratan dan menetapkan keputusan ketatanegaraan. Pada masa itu, keanggotaannya berasal dari unsur DPR-GR serta utusan daerah dan golongan yang diangkat."
+  },
+  dpas: {
+    title: "DPAS",
+    description: "DPAS merupakan badan penasihat yang memberikan jawaban, usul, atau pertimbangan kepada Presiden. Presiden Soekarno menjabat sebagai ketuanya."
+  },
+  dprgr: {
+    title: "DPR-GR",
+    description: "DPR-GR menjadi lembaga perwakilan setelah DPR hasil Pemilu 1955 dibubarkan. Anggotanya ditentukan melalui pengangkatan pada masa Demokrasi Terpimpin."
+  }
+};
+
+document.querySelectorAll(".map-button").forEach(button => {
+  button.addEventListener("click", () => {
+    const key = button.dataset.map;
+    const info = mapInfo[key];
+    if (!info) return;
+
+    document.querySelectorAll(".map-button").forEach(item => {
+      item.classList.remove("active");
+    });
+    button.classList.add("active");
+
+    document.getElementById("map-title").textContent = info.title;
+    document.getElementById("map-description").textContent = info.description;
+  });
+});
+
+// SCROLL PROGRESS
+
+window.addEventListener("scroll", () => {
+    const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    const percentage = scrollHeight > 0
+        ? (window.scrollY / scrollHeight) * 100
+        : 0;
+
+    document.getElementById("progress").style.width =
+        percentage + "%";
+});
+
+// REVEAL ANIMATION
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+// MOBILE NAVIGATION
+
+const menu = document.getElementById("menu");
+const navigation = document.getElementById("navigation");
+
+menu.addEventListener("click", () => {
+    navigation.classList.toggle("open");
+});
+
+navigation.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+    });
+});
+
+// INTERACTIVE QUIZ
+
+const questions = [
+    {
+        q: "Apa peristiwa yang memerintahkan pembentukan MPRS dan DPAS?",
+        options: [
+            "Pemilu 1955",
+            "Dekrit Presiden 5 Juli 1959",
+            "Perjanjian Linggarjati",
+            "Reformasi 1998"
+        ],
+        answer: 1,
+        explanation: "Dekrit Presiden 5 Juli 1959 memerintahkan pembentukan MPRS dan DPAS."
+    },
+    {
+        q: "Apa dasar hukum pembentukan MPRS?",
+        options: [
+            "Penpres No. 2 Tahun 1959",
+            "Penpres No. 3 Tahun 1959",
+            "UUDS 1950",
+            "TAP MPRS No. III/1963"
+        ],
+        answer: 0,
+        explanation: "MPRS dibentuk berdasarkan Penetapan Presiden No. 2 Tahun 1959."
+    },
+    {
+        q: "Apa fungsi utama DPAS?",
+        options: [
+            "Membuat undang-undang",
+            "Mengadili perkara",
+            "Memberi pertimbangan kepada Presiden",
+            "Memimpin kabinet"
+        ],
+        answer: 2,
+        explanation: "DPAS merupakan badan penasihat yang memberikan pertimbangan kepada Presiden."
+    },
+    {
+        q: "Bagaimana anggota MPRS ditentukan pada masa itu?",
+        options: [
+            "Seluruhnya dipilih langsung rakyat",
+            "Melalui pengangkatan sesuai ketentuan saat itu",
+            "Dipilih oleh Mahkamah Agung",
+            "Ditunjuk pemerintah daerah saja"
+        ],
+        answer: 1,
+        explanation: "Anggota MPRS terdiri dari unsur DPR-GR serta utusan daerah dan golongan yang diangkat."
+    },
+    {
+        q: "Apa dampak perubahan lembaga negara terhadap distribusi kekuasaan?",
+        options: [
+            "Kekuasaan semakin tersebar merata",
+            "Presiden kehilangan pengaruh",
+            "Kekuasaan politik semakin terpusat pada Presiden",
+            "DPAS mengambil alih tugas DPR"
+        ],
+        answer: 2,
+        explanation: "Pengaruh Presiden semakin kuat dalam pembentukan dan arah kerja lembaga negara."
+    }
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+const feedbackElement = document.getElementById("feedback");
+const numberElement = document.getElementById("number");
+const nextButton = document.getElementById("next");
+
+function showQuestion() {
+    answered = false;
+
+    const data = questions[current];
+
+    numberElement.textContent =
+        `PERTANYAAN ${String(current + 1).padStart(2, "0")} / 05`;
+
+    questionElement.textContent = data.q;
+    feedbackElement.textContent = "";
+    optionsElement.innerHTML = "";
+    nextButton.disabled = true;
+
+    data.options.forEach((option, index) => {
+        const button = document.createElement("button");
+
+        button.className = "option";
+        button.textContent = option;
+
+        button.addEventListener("click", () => {
+            checkAnswer(index);
+        });
+
+        optionsElement.appendChild(button);
+    });
+}
+
+function checkAnswer(selected) {
+    if (answered) return;
+
+    answered = true;
+
+    const data = questions[current];
+    const buttons = optionsElement.querySelectorAll("button");
+
+    buttons.forEach((button, index) => {
+        button.disabled = true;
+
+        if (index === data.answer) {
+            button.classList.add("correct");
+        }
+
+        if (index === selected && selected !== data.answer) {
+            button.classList.add("wrong");
+        }
+    });
+
+    if (selected === data.answer) {
+        score++;
+        feedbackElement.textContent =
+            "BENAR! " + data.explanation;
+    } else {
+        feedbackElement.textContent =
+            "BELUM TEPAT. " + data.explanation;
+    }
+
+    nextButton.disabled = false;
+}
+
+nextButton.addEventListener("click", () => {
+    if (!answered) return;
+
+    if (current < questions.length - 1) {
+        current++;
+        showQuestion();
+    } else {
+        questionElement.textContent =
+            `Kamu menjawab benar ${score} dari 5 pertanyaan!`;
+
+        numberElement.textContent = "KUIS SELESAI";
+
+        optionsElement.innerHTML = "";
+
+        feedbackElement.textContent =
+            score >= 4
+            ? "Bagus! Kamu sudah memahami materi ini."
+            : "Coba baca kembali bagian kronologi dan pergeseran kekuasaan.";
+
+        nextButton.textContent = "ULANGI KUIS ↻";
+
+        nextButton.onclick = () => {
+            current = 0;
+            score = 0;
+            nextButton.textContent = "LANJUT →";
+            nextButton.onclick = null;
+            showQuestion();
+        };
+    }
+});
+
+showQuestion();
+
+</script>
+
+</body>
+</html>
